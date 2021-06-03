@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+  	<head>
+        <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='template.css') }}"
+        <meta charset="utf-8">
+        {% if title %}
+            <title>Sikretek Kiney: Learn Skrattain - {{title}}</title>
+        {% else %}
+            <title>Sikretek Kiney: Learn Skrattain</title>
+        {% endif %}
+		    <table id="headertable">
+			      <tr>
+				    {% if title %}
+                <th><h2>Sikretek Kiney: Learn Skrattain - {{title}}</h2></th>
+            {% else %}
+                <th><h1>Sikretek Kiney: Learn Skrattain</h1></th>
+            {% endif %}
+            </tr>
+        </table>
+        <div class="menu">
+            <table>
+                <tr>
+                    <th><a href="{{url_for('home')}}">Home</a></th>
+                    <th><a href="{{url_for('dictionary')}}">Dictionary</a></th>
+                    {% if current_user.is_authenticated %}
+                        <th><a href="{{url_for('user')}}">My Account</a></th>
+                        {% if current_user.admin >= 1 %}
+                            <th><a href="{{url_for('new_word')}}">Add Words</a></th>
+                        {%endif%}
+                    {%else%}
+                        <th><p><a href="{{url_for('register')}}">Register</a> or <a href="{{url_for('login')}}">Login</a></p></th>
+                    {%endif%}
+                </tr>
+		    </table>
+        </div>
+  	</head>
+
+  	<body>
+        <div class="mainpg">
+            {% with messages = get_flashed_messages(with_categories=true) %}
+                {% if messages %}
+                    {%for category, message in messages%}
+                        <div class="{{category}}">
+                            <p>{{message}}</p>
+                        </div>
+                    {%endfor%}
+                {%endif%}
+            {% endwith %}
+            		
+            {% block body %}
+            {% endblock %}
+
+            <div class="footer">
+                <p>This site is created and managed by the Skrattain Linguistic Council</p>
+                <p>Sei tamiun mèfa fak ei kailokyok pa Kineyek yenèSalim Sikretek yeFeidèresim</p>
+            </div>
+        </div>
+    </body>
+</html>

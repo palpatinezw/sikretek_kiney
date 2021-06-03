@@ -1,0 +1,39 @@
+{% extends "template.html" %}
+
+{% block body %}
+	<div>
+		<form method="POST" action="">
+			{{ form.hidden_tag() }}
+			<fieldset>
+				<legend>Request a password reset</legend>
+				<div>
+					<table id="formtable">
+						<tr>
+							<th>
+								{{ form.email.label() }}
+							</th>
+							<th>
+								{%if form.email.errors%}
+									{{ form.email }}
+									{% for error in form.email.errors %}
+										<p>{{error}}</p>
+									{%endfor%}
+								{%else%}
+									{{ form.email }}
+								{%endif%}
+							</th>
+						</tr>
+						
+						<tr>
+							<th>
+							</th>
+							<th>
+								{{ form.submit() }}
+							</th>
+						</tr>
+					</table>
+				</div>
+			</fieldset>
+		</form>
+	</div>
+{% endblock %}

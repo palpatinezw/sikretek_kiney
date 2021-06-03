@@ -1,0 +1,125 @@
+table#headertable {
+	width:100%;
+	background-color:#f1f1c1;
+	text-align:center;
+}
+
+.menu table {
+	width:100%;
+	background-color:#f2a35e;
+	table-layout: fixed;
+}
+.menu a {
+	text-decoration:none;
+	color: black;
+
+}
+.menu a:hover {
+	background-color:#c7ffd6;
+}
+.menu a.nav-link:visited {
+   color: black;
+   text-decoration: none;
+}
+
+table#formtable {
+	table-layout: fixed;
+}
+table#formtable th:nth-child(1) {
+	table-layout: fixed;
+	width:50%;
+}
+table#formtable th:nth-child(2) {
+	table-layout: fixed;
+	width:50%;
+}
+.dictionary {
+	padding: 10px;
+	border-style: solid;
+	border-width: 1px;
+	border-radius: 5px;
+}
+.wordheader {
+	padding:1px;
+	border-radius: 5px;
+}
+.dictionary a {
+	text-decoration:none;
+	color: black;
+
+}
+.dictionary a.nav-link:visited {
+   color: black;
+   text-decoration: none;
+}
+.wordheader:hover{
+	background-color:#66ffc4;
+}
+.dictionary:hover{
+	background-color:#66adff;
+}
+.mainpg {
+	padding: 20px;
+	border-style: solid;
+	border-width: 1px;
+	border-radius: 5px;
+	background-color: #d6fff5;
+	border-color: #000000;
+}
+.success {
+	text-align: center;
+	border-style: solid;
+	border-width: 2px;
+	border-radius: 30px;
+	background-color: #abff9e;
+	border-color: #000000;
+}
+.error {
+	text-align: center;
+	border-style: solid;
+	border-width: 2px;
+	border-radius: 30px;
+	background-color: #fc5d5d;
+	border-color: #000000;
+}
+.profileleft {
+	padding-left:100px;
+	padding-right:100px;
+	padding-top:50px;
+	padding-bottom:50px;
+	width:150px;
+	float:left;
+}
+.profileleft img {
+	width:150px;
+	height:150px;
+}
+.profileleft table {
+	width:150px;
+}
+.profileright {
+	padding:50px;
+	text-align:center;
+}
+.username {
+	border-style:solid;
+	border-radius:5px;
+	font-family:"Arial Black";
+	font-size:10px;
+	text-align:center;
+}
+table#dictionarytable {
+	width:100%;
+	table-layout: fixed;
+}
+
+.userdesc {
+	font-family:"Arial";
+	font-size:12px;
+	text-align:center;
+}
+
+.footer {
+	text-align:center;
+	font-size:10px;
+}

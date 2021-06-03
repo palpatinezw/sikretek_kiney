@@ -1,0 +1,57 @@
+{% extends "template.html" %}
+
+{% block body %}
+	<div>
+		<form method="POST" action="">
+			{{ form.hidden_tag() }}
+			<fieldset>
+				<legend>Login</legend>
+				<div>
+					<table id="formtable">
+						<tr>
+							<th>
+								{{ form.username.label() }}
+							</th>
+							<th>
+								{%if form.username.errors%}
+									{{ form.username }}
+									{% for error in form.username.errors %}
+										<p>{{error}}</p>
+									{%endfor%}
+								{%else%}
+									{{ form.username }}
+								{%endif%}
+							</th>
+						</tr>
+						<tr>
+							<th>
+								{{ form.password.label() }}
+							</th>
+							<th>
+								{%if form.password.errors%}
+									{{ form.password }}
+									{% for error in form.password.errors %}
+										<p>{{error}}</p>
+									{%endfor%}
+								{%else%}
+									{{ form.password }}
+								{%endif%}
+							</th>
+						</tr>
+						<tr>
+							<th>
+							</th>
+							<th>
+								{{ form.submit() }}
+							</th>
+						</tr>
+					</table>
+				</div>
+			</fieldset>
+		</form>
+	</div>
+	<div>
+		<a href = "{{url_for('register')}}"> Register for an account</a><br>
+		<a href = "{{url_for('reset_req')}}"> Forgot your password?</a>
+	</div>
+{% endblock %}

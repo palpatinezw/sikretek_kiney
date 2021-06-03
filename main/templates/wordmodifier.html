@@ -1,0 +1,68 @@
+{% extends "template.html" %}
+
+{%block body%}
+	<div>
+		<form method="POST" action="">
+			{{ form.hidden_tag() }}
+			<fieldset>
+				<legend>{{legend}}</legend>
+				<div>
+					<table id="formtable">
+						<tr>
+							<th>
+								{{ form.sikret.label() }}
+							</th>
+							<th>
+								{%if form.sikret.errors%}
+									{{ form.sikret }}
+									{% for error in form.sikret.errors %}
+										<p>{{error}}</p>
+									{%endfor%}
+								{%else%}
+									{{ form.sikret }}
+								{%endif%}
+							</th>
+						</tr>
+						<tr>
+							<th>
+								{{ form.definition.label() }}
+							</th>
+							<th>
+								{%if form.definition.errors%}
+									{{ form.definition }}
+									{% for error in form.definition.errors %}
+										<p>{{error}}</p>
+									{%endfor%}
+								{%else%}
+									{{ form.definition }}
+								{%endif%}
+							</th>
+						</tr>
+						<tr>
+							<th>
+								{{ form.wordtype.label() }}
+							</th>
+							<th>
+								{%if form.wordtype.errors%}
+									{{ form.wordtype }}
+									{% for error in form.wordtype.errors %}
+										<p>{{error}}</p>
+									{%endfor%}
+								{%else%}
+									{{ form.wordtype }}
+								{%endif%}
+							</th>
+						</tr>
+						<tr>
+							<th>
+							</th>
+							<th>
+								{{ form.submit() }}
+							</th>
+						</tr>
+					</table>
+				</div>
+			</fieldset>
+		</form>
+	</div>
+{%endblock%}

@@ -1,0 +1,18 @@
+{% extends "template.html" %}
+
+{% block body %}
+
+<div class="dictionary">
+	<h3>{{word.sikret}}</h3>
+	<p>{{word.definition}}</p>
+	<p>{{word.wordtype}}</p>
+</div>
+
+<div>
+	<form method="POST" action="">
+		{{ form.hidden_tag() }}
+		{{form.submit()}}
+	</form>
+</div>
+
+{% endblock %}

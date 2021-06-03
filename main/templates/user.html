@@ -1,0 +1,17 @@
+{% extends "template.html" %}
+
+{% block body %}
+	<div class="profileleft">
+		<table>
+			<img src="{{img_file}}">
+			<p class="username">{{current_user.username}}</p>
+		</table>
+	</div>
+	<div class="profileright">
+		<p class="userdesc">{{current_user.description}}</p>
+		<form>
+			<input type="button" value="Logout" onclick="window.location.href='{{url_for('logout')}}'" />
+		</form>
+	</div>
+
+{% endblock %}

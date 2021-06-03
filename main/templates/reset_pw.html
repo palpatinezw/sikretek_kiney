@@ -1,0 +1,53 @@
+{% extends "template.html" %}
+
+{% block body %}
+	<div>
+		<form method="POST" action="">
+			{{ form.hidden_tag() }}
+			<fieldset>
+				<legend>Request a password reset</legend>
+				<div>
+					<table id="formtable">
+						<tr>
+							<th>
+								{{ form.password.label() }}
+							</th>
+							<th>
+								{%if form.password.errors%}
+									{{ form.password }}
+									{% for error in form.password.errors %}
+										<p>{{error}}</p>
+									{%endfor%}
+								{%else%}
+									{{ form.password }}
+								{%endif%}
+							</th>
+						</tr>
+						<tr>
+							<th>
+								{{ form.confirm_password.label() }}
+							</th>
+							<th>
+								{%if form.confirm_password.errors%}
+									{{ form.confirm_password }}
+									{% for error in form.confirm_password.errors %}
+										<p>{{error}}</p>
+									{%endfor%}
+								{%else%}
+									{{ form.confirm_password }}
+								{%endif%}
+							</th>
+						</tr>
+						<tr>
+							<th>
+							</th>
+							<th>
+								{{ form.submit() }}
+							</th>
+						</tr>
+					</table>
+				</div>
+			</fieldset>
+		</form>
+	</div>
+{% endblock %}
